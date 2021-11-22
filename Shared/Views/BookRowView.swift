@@ -12,7 +12,7 @@ struct BookRowView: View {
     var body: some View {
         NavigationLink(destination: DetailView(book:book), label: {
             HStack {
-                Book.Image(title: book.title)
+                Book.Image(title: book.title, size: 80.0)
                 VStack(alignment: .leading) {
                     Text(book.title)
                         .font(.title2)

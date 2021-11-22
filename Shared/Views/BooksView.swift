@@ -10,6 +10,7 @@ import SwiftUI
 extension Book {
     struct Image: View {
         let title: String
+        let size: CGFloat? 
         var body: some View {
             let symbol = SwiftUI.Image(title: title)
             ?? .init(systemName: "book")
@@ -17,7 +18,7 @@ extension Book {
             symbol
                 .resizable()
                 .scaledToFit()
-                .frame(width: 80, height: 80)
+                .frame(width: size, height: size)
                 .font(Font.title.weight(.light))
                 .foregroundColor(.secondary.opacity(0.5))
         }
@@ -41,9 +42,9 @@ extension Image {
 struct BookPreview: PreviewProvider {
     static var previews: some View {
         VStack {
-            Book.Image(title: Book().title)
-            Book.Image(title: "")
-            Book.Image(title: "🤓")
+            Book.Image(title: Book().title, size: 30.0)
+            Book.Image(title: "", size: 30.0)
+            Book.Image(title: "🤓", size: 30.0)
         }
         
         
