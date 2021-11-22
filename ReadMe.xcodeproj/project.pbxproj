@@ -17,6 +17,10 @@
 		84F33106274BE2630010F406 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F330DC274BE2620010F406 /* ContentView.swift */; };
 		84F33107274BE2630010F406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F330DD274BE2630010F406 /* Assets.xcassets */; };
 		84F33108274BE2630010F406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F330DD274BE2630010F406 /* Assets.xcassets */; };
+		84F3311B274BFE0A0010F406 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3311A274BFE0A0010F406 /* Book.swift */; };
+		84F3311C274BFE0A0010F406 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3311A274BFE0A0010F406 /* Book.swift */; };
+		84F3311F274BFF090010F406 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3311E274BFF090010F406 /* BooksView.swift */; };
+		84F33120274BFF090010F406 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3311E274BFF090010F406 /* BooksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		84F330FB274BE2630010F406 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F330FF274BE2630010F406 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		84F33101274BE2630010F406 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		84F3311A274BFE0A0010F406 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		84F3311E274BFF090010F406 /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				84F330DB274BE2620010F406 /* ReadMeApp.swift */,
-				84F330DC274BE2620010F406 /* ContentView.swift */,
+				84F3311D274BFEDF0010F406 /* Views */,
 				84F330DD274BE2630010F406 /* Assets.xcassets */,
+				84F3311A274BFE0A0010F406 /* Book.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -139,6 +146,15 @@
 				84F33101274BE2630010F406 /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		84F3311D274BFEDF0010F406 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84F330DC274BE2620010F406 /* ContentView.swift */,
+				84F3311E274BFF090010F406 /* BooksView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +317,8 @@
 			files = (
 				84F33105274BE2630010F406 /* ContentView.swift in Sources */,
 				84F33103274BE2630010F406 /* ReadMeApp.swift in Sources */,
+				84F3311B274BFE0A0010F406 /* Book.swift in Sources */,
+				84F3311F274BFF090010F406 /* BooksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +328,8 @@
 			files = (
 				84F33106274BE2630010F406 /* ContentView.swift in Sources */,
 				84F33104274BE2630010F406 /* ReadMeApp.swift in Sources */,
+				84F3311C274BFE0A0010F406 /* Book.swift in Sources */,
+				84F33120274BFF090010F406 /* BooksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
