@@ -11,7 +11,7 @@ struct Book {
     var author: String
     var title: String
     
-    init(_ title: String = "an title", _ author: String = "an author") {
+    init(title: String = "an title", author: String = "an author") {
         self.title = title
         self.author = author
     }

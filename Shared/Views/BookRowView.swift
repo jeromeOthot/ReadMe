@@ -19,14 +19,14 @@ struct BookRowView: View {
                     .font(.title2)
                     .foregroundColor(.secondary)
             }
-            
+            .lineLimit(1)
         }
-       
+        .padding()
     }
 }
 
 struct BookRowView_Previews: PreviewProvider {
     static var previews: some View {
-        BookRowView(book: Book("Mon titre", "moi"))
+        BookRowView(book: Book(title: "Mon titre", author:"moi"))
     }
 }
