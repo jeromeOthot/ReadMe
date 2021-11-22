@@ -10,18 +10,20 @@ import SwiftUI
 struct BookRowView: View {
     var book: Book
     var body: some View {
-        HStack {
-            Book.Image(title: book.title)
-            VStack(alignment: .leading) {
-                Text(book.title)
-                    .font(.title2)
-                Text(book.author)
-                    .font(.title2)
-                    .foregroundColor(.secondary)
+        NavigationLink(destination: DetailView(book:book), label: {
+            HStack {
+                Book.Image(title: book.title)
+                VStack(alignment: .leading) {
+                    Text(book.title)
+                        .font(.title2)
+                    Text(book.author)
+                        .font(.title2)
+                        .foregroundColor(.secondary)
+                }
+                .lineLimit(1)
             }
-            .lineLimit(1)
-        }
-        .padding()
+            .padding()
+        })
     }
 }
 
