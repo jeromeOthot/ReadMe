@@ -9,8 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        HStack {
+            Image(systemName: "book")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 80, height: 80)
+                .font(Font.title.weight(.light))
+                .foregroundColor(.secondary.opacity(0.5))
+            Text("Title")
+                .font(.title2)
+                .padding()
+                
+        }
     }
 }
 
