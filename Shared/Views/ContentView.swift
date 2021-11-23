@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var library = Library()
+    @EnvironmentObject var library: Library
+    @State var addingNewbook = false;
+    
     var body: some View {
         NavigationView {
             List {
                 Button {
-                    
+                    addingNewbook = true
                 }
                 label: {
                     VStack(alignment: .center) {
@@ -21,6 +23,8 @@ struct ContentView: View {
                             .font(.title2)
                     }
                 }
+                .sheet(isPresented: $addingNewbook, content:
+                        AddBookView.init)
                 ForEach(library.sortedBooks) { book in
                     BookRowView(book: book, image: $library.images[book])
                 }
@@ -35,5 +39,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Library())
     }
 }

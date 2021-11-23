@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84A52926274D617C00C4A72C /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A52925274D617C00C4A72C /* AddBookView.swift */; };
+		84A52927274D617C00C4A72C /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A52925274D617C00C4A72C /* AddBookView.swift */; };
 		84F330F4274BE2630010F406 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F330F3274BE2630010F406 /* Tests_iOS.swift */; };
 		84F330F6274BE2630010F406 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F330F5274BE2630010F406 /* Tests_iOSLaunchTests.swift */; };
 		84F33100274BE2630010F406 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F330FF274BE2630010F406 /* Tests_macOS.swift */; };
@@ -49,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84A52925274D617C00C4A72C /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		84F330DB274BE2620010F406 /* ReadMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeApp.swift; sourceTree = "<group>"; };
 		84F330DC274BE2620010F406 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		84F330DD274BE2630010F406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 				84F33124274C21670010F406 /* BookRowView.swift */,
 				84F3312A274C2D5B0010F406 /* DetailView.swift */,
 				84F3312D274C40F70010F406 /* PHPickerViewController.View.swift */,
+				84A52925274D617C00C4A72C /* AddBookView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F33105274BE2630010F406 /* ContentView.swift in Sources */,
+				84A52926274D617C00C4A72C /* AddBookView.swift in Sources */,
 				84F33125274C21670010F406 /* BookRowView.swift in Sources */,
 				84F33103274BE2630010F406 /* ReadMeApp.swift in Sources */,
 				84F3312B274C2D5B0010F406 /* DetailView.swift in Sources */,
@@ -347,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F33106274BE2630010F406 /* ContentView.swift in Sources */,
+				84A52927274D617C00C4A72C /* AddBookView.swift in Sources */,
 				84F33126274C21670010F406 /* BookRowView.swift in Sources */,
 				84F33104274BE2630010F406 /* ReadMeApp.swift in Sources */,
 				84F3312C274C2D5B0010F406 /* DetailView.swift in Sources */,

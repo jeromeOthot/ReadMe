@@ -10,8 +10,8 @@ import Combine
 import SwiftUI
 
 class Book: ObservableObject {
-    let author: String
-    let title: String
+    @Published var author: String
+    @Published var title: String
     @Published var microReview: String
     @Published var readMe: Bool
     
