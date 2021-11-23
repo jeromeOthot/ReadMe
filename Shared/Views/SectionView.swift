@@ -25,6 +25,28 @@ struct SectionView: View {
             SwiftUI.Section {
                 ForEach(books) { book in
                     BookRowView(book: book)
+                        .swipeActions(edge: .leading){
+                            Button {
+                                withAnimation {
+                                    book.readMe.toggle()
+                                    library.sortBooks()
+                                }
+                            }
+                            label: {
+                                book.readMe
+                                ? Label("Finished", systemImage: "bookmark.slash")
+                                : Label("Read me !", systemImage: "bookmark.slash")
+                            }
+                        }
+                        .tint(.accentColor)
+                        .swipeActions(edge: .trailing){
+                            Button(role: .destructive) {
+                                //TODO:
+                            }
+                            label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
                 }
             }
             header: {
