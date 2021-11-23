@@ -9,8 +9,18 @@ import Combine
 import Foundation
 import SwiftUI
 
+enum Section : CaseIterable {
+    case toRead
+    case finished
+}
+
 class Library : ObservableObject {
-  var sortedBooks: [Book] { booksCache }
+    var sortedBooks: [Section: [Book]] {
+        let groupedBooks = Dictionary(grouping: booksCache, by: \.readMe)
+        return Dictionary(uniqueKeysWithValues: groupedBooks.map{
+            (($0.key ? .toRead : .finished), $0.value )
+        })
+    }
   
   /// An in-memory cache of the manually-sorted books.
     @Published private var booksCache: [Book] = [
@@ -32,5 +42,12 @@ class Library : ObservableObject {
     func addNewBook(_ book: Book, _ image: Image?) {
         booksCache.insert(book, at: 0)
         images[book] = image
+    }
+    
+    func sortBooks() {
+        booksCache = sortedBooks
+            .sorted { $1.key == .finished }
+            .flatMap { $0.value }
+        objectWillChange.send()
     }
 }

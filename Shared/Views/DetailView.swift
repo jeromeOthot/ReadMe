@@ -11,7 +11,9 @@ struct DetailView: View {
     @ObservedObject var book: Book
     @State var showDeletePopup = false
     @State var showingImagePicker = false
-    @Binding var image: Image?
+    @EnvironmentObject var library: Library
+   // var image = library.images[book]
+    
     var body: some View {
         HStack(alignment: .top){
             VStack(alignment: .center) {
@@ -30,7 +32,7 @@ struct DetailView: View {
                 Divider().padding(.vertical)
                 TextField("Book review:", text: $book.microReview)
                 Divider().padding(.vertical)
-                Book.Image(image: image, title: book.title, size: 150.0, cornerRadius: 16)
+                Book.Image(image: library.images[book], title: book.title, size: 150.0, cornerRadius: 16)
                 Spacer()
          
                 
@@ -38,7 +40,7 @@ struct DetailView: View {
                     Button("Update image") {
                         showingImagePicker = true;
                     }
-                    if(image != nil){
+                    if(library.images[book] != nil){
                         Spacer()
                         Button("Delete image") {
                             showDeletePopup = true;
@@ -50,21 +52,27 @@ struct DetailView: View {
             .padding(.top, 0.0)
         }.padding()
         .sheet(isPresented: $showingImagePicker) {
-            PHPickerViewController.View(image: $image)
+            PHPickerViewController.View(image: $library.images[book])
         }
         .confirmationDialog(
               "Delete image for \(book.title)?",
               isPresented: $showDeletePopup) {
-                Button("Delete", role: .destructive) { image = nil }
+                Button("Delete", role: .destructive) {  }
               } message: {
                 Text("Delete image for \(book.title)?")
+              }
+              .onDisappear {
+                  withAnimation {
+                    library.sortBooks()
+                  }
+                  
               }
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(book: Book(), image: .constant(nil))
+        DetailView(book: Book())
             .previewedAllColor
     }
 }

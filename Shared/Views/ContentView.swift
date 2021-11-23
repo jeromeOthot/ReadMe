@@ -25,9 +25,13 @@ struct ContentView: View {
                 }
                 .sheet(isPresented: $addingNewbook, content:
                         AddBookView.init)
-                ForEach(library.sortedBooks) { book in
-                    BookRowView(book: book, image: $library.images[book])
+                
+                ForEach(Section.allCases, id: \.self) {
+                  SectionView(section: $0)
                 }
+                //ForEach(library.sortedBooks) { book in
+                 //   BookRowView(book: book, image: $library.images[book])
+                //}
             }
             
             .navigationTitle("My Library")
