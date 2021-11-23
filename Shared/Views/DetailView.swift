@@ -9,11 +9,12 @@ import SwiftUI
 
 struct DetailView: View {
     let book: Book
+    @State var showDeletePopup = false
     @State var showingImagePicker = false
     @Binding var image: Image?
     var body: some View {
         HStack(alignment: .top){
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 Text(book.title)
                     .font(.title2)
                 Text(book.author)
@@ -21,15 +22,31 @@ struct DetailView: View {
                     .foregroundColor(.secondary)
                 Book.Image(image: image, title: book.title, size: 150.0, cornerRadius: 16)
                 Spacer()
-                Button("Update image") {
-                    showingImagePicker = true;
+                HStack {
+                    Button("Update image") {
+                        showingImagePicker = true;
+                    }
+                    if(image != nil){
+                        Spacer()
+                        Button("Delete image") {
+                            showDeletePopup = true;
+                        }
+                    }
                 }
+                
             }
             .padding(.top, 0.0)
         }.padding()
-            .sheet(isPresented: $showingImagePicker) {
-                PHPickerViewController.View(image: $image)
-            }
+        .sheet(isPresented: $showingImagePicker) {
+            PHPickerViewController.View(image: $image)
+        }
+        .confirmationDialog(
+              "Delete image for \(book.title)?",
+              isPresented: $showDeletePopup) {
+                Button("Delete", role: .destructive) { image = nil }
+              } message: {
+                Text("Delete image for \(book.title)?")
+              }
     }
 }
 
