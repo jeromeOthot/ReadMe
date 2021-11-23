@@ -8,13 +8,20 @@ import PhotosUI.PHContentEditingController
 import SwiftUI
 
 struct DetailView: View {
-    let book: Book
+    var book: Book
     @State var showDeletePopup = false
     @State var showingImagePicker = false
     @Binding var image: Image?
     var body: some View {
         HStack(alignment: .top){
             VStack(alignment: .center) {
+                Button {
+                    book.readMe.toggle()
+                }
+                label: {
+                    Image(systemName: book.readMe ? "bookmark.fill" : "bookmark" )
+                        .font(.system(size: 48, weight: .light))
+                }
                 Text(book.title)
                     .font(.title2)
                 Text(book.author)

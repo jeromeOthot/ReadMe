@@ -11,7 +11,7 @@ struct ContentView: View {
     @State var library = Library()
     var body: some View {
         NavigationView {
-            List(library.sortedBooks, id: \.title) { book in
+            List(library.sortedBooks) { book in
                 BookRowView(book: book, image: $library.images[book])
             }
             .navigationTitle("My Library")
