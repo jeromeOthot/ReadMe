@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Library {
   var sortedBooks: [Book] { booksCache }
@@ -24,4 +25,6 @@ struct Library {
     .init(title: "Drawing People", author: "Barbara Bradley"),
     .init(title: "What to Say When You Talk to Yourself", author: "Shad Helmstetter")
   ]
+
+    var images: [Book: Image] = [:]
 }
