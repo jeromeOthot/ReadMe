@@ -27,8 +27,13 @@ struct DetailView: View {
                 Text(book.author)
                     .font(.title2)
                     .foregroundColor(.secondary)
+                Divider().padding(.vertical)
+                TextField("Book review:", text: $book.microReview)
+                Divider().padding(.vertical)
                 Book.Image(image: image, title: book.title, size: 150.0, cornerRadius: 16)
                 Spacer()
+         
+                
                 HStack {
                     Button("Update image") {
                         showingImagePicker = true;

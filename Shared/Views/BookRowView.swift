@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookRowView: View {
-    var book: Book
+    @ObservedObject var book: Book
     @Binding var image: Image?
     
     var body: some View {
@@ -20,6 +20,9 @@ struct BookRowView: View {
                         .font(.title2)
                     Text(book.author)
                         .font(.title2)
+                        .foregroundColor(.secondary)
+                    Text(book.microReview)
+                        .font(.title3)
                         .foregroundColor(.secondary)
                 }
                 .lineLimit(1)
