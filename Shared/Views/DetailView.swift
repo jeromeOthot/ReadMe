@@ -8,7 +8,7 @@ import PhotosUI.PHContentEditingController
 import SwiftUI
 
 struct DetailView: View {
-    var book: Book
+    @ObservedObject var book: Book
     @State var showDeletePopup = false
     @State var showingImagePicker = false
     @Binding var image: Image?
