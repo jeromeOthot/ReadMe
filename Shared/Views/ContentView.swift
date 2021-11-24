@@ -33,7 +33,7 @@ struct ContentView: View {
                  //   BookRowView(book: book, image: $library.images[book])
                 //}
             }
-            
+            .toolbar(content: EditButton.init)
             .navigationTitle("My Library")
         }
         
